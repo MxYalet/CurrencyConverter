@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/tvInput"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="#efefef"
+        android:maxLength="12"
+        android:textSize="48sp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_range"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="GPB/EUR"
+                android:padding="5dp"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:background="@drawable/bg_date_revenue">
+
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="AED/EUR"
+                android:padding="5dp"
+                android:textSize="9sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/bg_date_revenue">
+
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="GBP/USD"
+                android:padding="5dp"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:background="@drawable/bg_date_revenue">
+
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_to_date"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="EUR/COL"
+                android:padding="5dp"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:background="@drawable/bg_date_revenue">
+
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:padding="5dp"
+            android:drawableEnd="@drawable/select"
+            android:textColor="@color/black">
+        </Button>
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="4"
+        android:columnCount="5"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/Seven"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:text="7"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/Eigth"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:text="8"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+        <Button
+            android:id="@+id/Nin3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:text="9"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <ImageButton
+            android:id="@+id/Divide"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/divide"
+            android:layout_gravity="center_vertical"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onOperator"/>
+
+        <ImageButton
+            android:id="@+id/Delet3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_columnWeight="1"
+            android:background="@null"
+            android:onClick="onOperator"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/delete" />
+
+        <Button
+            android:id="@+id/Four"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:background="@null"
+            android:text="4"
+            android:textSize="25dp"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/Five"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:layout_columnWeight="1"            android:background="@null"
+            android:text="5"
+            android:textSize="25dp"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/Six"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:layout_columnWeight="1"            android:text="6"
+            android:background="@null"
+            android:textSize="25dp"
+            android:onClick="onDigit"/>
+
+        <ImageButton
+            android:id="@+id/Multiply"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="center_vertical" android:src="@drawable/multiply"
+            android:background="@null"
+            android:textSize="25dp"
+            android:onClick="onOperator"/>
+
+        <ImageButton
+            android:id="@+id/Modulus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/modulus"
+            android:background="@null"
+            android:text="%"
+            android:textSize="25dp"
+            android:onClick="onOperator"/>
+
+        <Button
+            android:id="@+id/One"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_columnWeight="1"              android:text="1"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/Two"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:text="2"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/Three"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:layout_columnWeight="1"              android:text="3"
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <ImageButton
+            android:id="@+id/Subtract"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:layout_columnWeight="1"              android:src="@drawable/minus"
+            android:text="-"
+            android:textSize="25dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:onClick="onOperator"/>
+
+        <Button
+            android:id="@+id/Equals"
+            android:layout_width="10dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="2dp"
+            android:layout_column="4"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_vertical"
+            android:layout_rowSpan="2"
+            android:text= "="
+            android:textSize="25sp"
+            android:background="@drawable/button_shaped_trans"
+            android:backgroundTint="@color/new_grey"
+            android:onClick="onDigit"/>
+
+
+        <Button
+            android:id="@+id/Decimal"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:layout_columnWeight="3"              android:text="0"
+            android:background="@null"
+            android:textSize="25dp"
+            android:onClick="onDecimalPoint"/>
+
+        <Button
+            android:id="@+id/Zero"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:layout_columnWeight="1"              android:text="."
+            android:textSize="25dp"
+            android:background="@null"
+            android:onClick="onDigit"/>
+
+        <Button
+            android:id="@+id/ANS"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:layout_columnWeight="1"              android:text="Ans"
+            android:textSize="25dp"
+            android:textStyle="normal"
+            android:background="@null"
+            android:onClick="onClear"/>
+
+        <ImageButton
+            android:id="@+id/Addition"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:layout_columnWeight="1"              android:src="@drawable/plus"
+            android:text="+"
+            android:textSize="25dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:onClick="onOperator"/>
+
+
+    </GridLayout>
+
+</LinearLayout>
