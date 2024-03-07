@@ -1,26 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <android.inputmethodservice.ExtractEditText
-        android:id="@+id/tvInput"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="#efefef"
-        android:maxLength="12"
-        android:textSize="48sp"/>
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/workingsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:text="23+34"
+            android:maxLines="2"
+            android:visibility="visible"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/resultsTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.929" />
+
+        <TextView
+            android:id="@+id/resultsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textAlignment="textEnd"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/ll_range"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_width="60dp"
@@ -132,11 +167,12 @@
     </LinearLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
         android:rowCount="4"
-        android:columnCount="5"
-        android:layout_margin="10dp">
+        android:columnCount="5">
 
         <Button
             android:id="@+id/Seven"
@@ -150,8 +186,8 @@
             android:layout_columnWeight="1"
             android:text="7"
             android:textSize="25dp"
-            android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            android:background="@null"/>
 
         <Button
             android:id="@+id/Eigth"
@@ -166,7 +202,8 @@
             android:text="8"
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
         <Button
             android:id="@+id/Nin3"
             android:layout_width="50dp"
@@ -180,7 +217,8 @@
             android:text="9"
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <ImageButton
             android:id="@+id/Divide"
@@ -209,7 +247,7 @@
             android:layout_column="4"
             android:layout_columnWeight="1"
             android:background="@null"
-            android:onClick="onOperator"
+            android:onClick="backSpaceAction"
             android:layout_gravity="center_vertical"
             android:src="@drawable/delete" />
 
@@ -221,12 +259,12 @@
             android:layout_marginRight="2dp"
             android:layout_marginTop="20dp"
             android:layout_column="0"
-            android:layout_row="1"
             android:layout_columnWeight="1"
             android:background="@null"
             android:text="4"
             android:textSize="25dp"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/Five"
@@ -240,7 +278,7 @@
             android:layout_columnWeight="1"            android:background="@null"
             android:text="5"
             android:textSize="25dp"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"/>
 
         <Button
             android:id="@+id/Six"
@@ -270,7 +308,7 @@
             android:layout_gravity="center_vertical" android:src="@drawable/multiply"
             android:background="@null"
             android:textSize="25dp"
-            android:onClick="onOperator"/>
+            />
 
         <ImageButton
             android:id="@+id/Modulus"
@@ -287,7 +325,8 @@
             android:background="@null"
             android:text="%"
             android:textSize="25dp"
-            android:onClick="onOperator"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/One"
@@ -301,7 +340,8 @@
             android:layout_columnWeight="1"              android:text="1"
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/Two"
@@ -316,7 +356,8 @@
             android:text="2"
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/Three"
@@ -330,7 +371,8 @@
             android:layout_columnWeight="1"              android:text="3"
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <ImageButton
             android:id="@+id/Subtract"
@@ -346,7 +388,8 @@
             android:textSize="25dp"
             android:layout_gravity="center_vertical"
             android:background="@null"
-            android:onClick="onOperator"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/Equals"
@@ -365,7 +408,8 @@
             android:textSize="25sp"
             android:background="@drawable/button_shaped_trans"
             android:backgroundTint="@color/new_grey"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
 
         <Button
@@ -380,7 +424,8 @@
             android:layout_columnWeight="3"              android:text="0"
             android:background="@null"
             android:textSize="25dp"
-            android:onClick="onDecimalPoint"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/Zero"
@@ -394,7 +439,8 @@
             android:layout_columnWeight="1"              android:text="."
             android:textSize="25dp"
             android:background="@null"
-            android:onClick="onDigit"/>
+            android:onClick="numberAction"
+            />
 
         <Button
             android:id="@+id/ANS"
@@ -408,8 +454,7 @@
             android:layout_columnWeight="1"              android:text="Ans"
             android:textSize="25dp"
             android:textStyle="normal"
-            android:background="@null"
-            android:onClick="onClear"/>
+            android:background="@null"/>
 
         <ImageButton
             android:id="@+id/Addition"
@@ -423,9 +468,9 @@
             android:layout_columnWeight="1"              android:src="@drawable/plus"
             android:text="+"
             android:textSize="25dp"
+            android:onClick="numberAction"
             android:layout_gravity="center_vertical"
-            android:background="@null"
-            android:onClick="onOperator"/>
+            android:background="@null"/>
 
 
     </GridLayout>
