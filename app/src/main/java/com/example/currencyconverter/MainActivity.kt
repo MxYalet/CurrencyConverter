@@ -46,8 +46,6 @@ class MainActivity : AppCompatActivity(){
         binding.workingsTV.text = ""
         binding.resultsTV.text = ""
     }
-
-
     fun backSpaceAction(view: View)
     {
         val length = binding.workingsTV.length()
