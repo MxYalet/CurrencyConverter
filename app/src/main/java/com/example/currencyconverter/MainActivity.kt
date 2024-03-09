@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(){
     fun allClearAction(view: View)
     {
         binding.workingsTV.text = ""
+
         binding.resultsTV.text = ""
     }
     fun backSpaceAction(view: View)
