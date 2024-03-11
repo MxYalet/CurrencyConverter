@@ -41,6 +41,18 @@ class MainActivity : AppCompatActivity(){
 
 
 
+    fun allClearAction(view: View)
+    {
+        binding.workingsTV.text = ""
+
+        binding.resultsTV.text = ""
+    }
+    fun backSpaceAction(view: View)
+    {
+        val length = binding.workingsTV.length()
+        if(length > 0)
+            binding.workingsTV.text = binding.workingsTV.text.subSequence(0, length - 1)
+    }
 
     fun equalsAction(view: View)
     {
