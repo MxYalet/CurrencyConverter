@@ -54,8 +54,6 @@ class MainActivity : AppCompatActivity(){
             binding.workingsTV.text = binding.workingsTV.text.subSequence(0, length - 1)
     }
 
-
-
     fun equalsAction(view: View)
     {
         binding.resultsTV.text = calculateResults()
